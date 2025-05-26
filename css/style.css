@@ -1,0 +1,72 @@
+body{display: flex;
+flex-direction: column;
+gap: 24px;
+background: color #f8f8f8; ;}
+.header {display: flex;
+    flex-direction: row;
+    padding: 18;
+}
+.header__main-navigation {
+}
+.header__burger {
+}
+.header__divider {
+}
+.header__logo {
+}
+.contact-us {
+}
+.contact-us__call {
+}
+.contact-us__chat {
+}
+.contact-us__profile {
+}
+.header__repair {
+}
+.header__checkstatus {
+}
+.main {
+}
+.main__services {
+}
+.main__title {
+}
+.main__title-name {
+}
+.main__services-buttons {
+}
+.button_item {
+}
+.button_item-text {
+}
+.main__menu {
+}
+.main__menu-items {
+}
+.main__menu-list {
+}
+.main__menu-item {
+}
+.main__menu-item--active {
+}
+.main__information {
+}
+.main__information-left {
+}
+.information__text {
+}
+.information__text-first {
+}
+.information__text-second {
+}
+.main__information-more {
+}
+.information-more__img {
+}
+.information-more__txt {
+}
+.main__information-right {
+}
+.photo-office {
+}
