@@ -304,7 +304,7 @@ body {
   }
   .main {
     padding-top: 42px;
-    gap: 8px;
+    gap: 7px;
     padding-right: 25px;
   }
   .main__services-buttons {
@@ -327,7 +327,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-right: 32px;
+    padding-right: 7px;
     width: 100%;
   }
   .main__title {
@@ -347,27 +347,38 @@ body {
     overflow-x: visible;
     gap: 32px;
     width: 100%;
+    padding: 0;
   }
-}
-.main__menu-item {
-  padding: 8.63px 22.64px;
-  gap: 1px;
-  flex-wrap: wrap;
-}
-.information-more__img {
-  display: flex;
-  
-  
-}
-.main__information-right{
-display: flex
-}
-.main__information{
-  display: flex;
-  padding-right: 3.65px;
-}
-.main__menu-list{
-  flex-wrap: wrap;
+
+  .main__menu-item {
+    padding: 8.63px 22.64px;
+    gap: 1px;
+    flex-wrap: wrap;
+  }
+  .information-more__img {
+    display: flex;
+  }
+  .main__information-right {
+    display: flex;
+  }
+  .main__information {
+    display: flex;
+  }
+  .main__menu-list {
+    flex-wrap: wrap;
+    padding: 0 0 0 34px;
+  }
+  .information__text {
+    padding: 9px 0 0 34px;
+  }
+  .photo-office {
+    padding-right: 3.65px;
+  }
+  .main__information-more {
+    padding: 3.78px 0 0 32px;
+  }
+  .main__title-divider {height: 40px;
+    width: 3px;
 }
 
 }
