@@ -212,7 +212,7 @@ body {
   align-items: center;
 }
 
-@media (min-width: 772px) {
+@media (min-width: 767px) {
   .header__divider-first {
     display: block;
   }
