@@ -144,8 +144,9 @@ body {
   cursor: pointer;
 }
 .main__menu-item--active {
-  border: 2px solid #41f6d7;
+  border: 2px solid rgba(184, 255, 236, 1);
   border-radius: 5px;
+  background-color: white;
 }
 .main__information {
   display: flex;
@@ -210,6 +211,10 @@ body {
   gap: 16px;
   align-items: center;
 }
+.information__text-first {
+  display: flex;
+  padding: 0 16px 0 16px;
+}
 
 @media (min-width: 767px) {
   .header__divider-first {
@@ -220,8 +225,6 @@ body {
     align-items: center;
     gap: 16px;
   }
-  .information__text-first {
-  }
 
   .information__text-second {
     display: block;
@@ -230,7 +233,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    padding-right: 25px;
+    padding-right: 15px;
+  }
+  .main__menu{overflow-x: hidden;
+    width: 100%;
+
   }
   .main__title {
     display: flex;
@@ -238,7 +245,7 @@ body {
   }
   .main__menu-items {
     display: flex;
-    padding: 0 24px;
+    padding-left: 24px;
   }
   .main__information {
     display: flex;
@@ -249,19 +256,24 @@ body {
     gap: 10px;
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 47%;
   }
   .information__text {
     display: flex;
     flex-direction: column;
     gap: 26px;
     padding-left: 24px;
+    line-height: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.2px;
   }
   .information__text-first {
     line-height: 20px;
     font-weight: 400;
     font-size: 14px;
     letter-spacing: 0.3px;
+    padding: 0;
   }
   .information__text-second {
     display: -webkit-box;
@@ -283,10 +295,12 @@ body {
   .main__information-right {
     display: flex;
     width: 50%;
+    padding: 0 25px 0 0;
   }
   .photo-office {
     width: 100%;
     border-radius: 6px;
+    padding-right: 25;
   }
   .main__information-more {
     display: flex;
@@ -296,6 +310,11 @@ body {
   .information-more__img {
   }
   .information-more__txt {
+  }
+  .main__menu-list {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
   }
 }
 @media (min-width: 1120px) {
@@ -377,8 +396,8 @@ body {
   .main__information-more {
     padding: 3.78px 0 0 32px;
   }
-  .main__title-divider {height: 40px;
+  .main__title-divider {
+    height: 40px;
     width: 3px;
-}
-
+  }
 }
