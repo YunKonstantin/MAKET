@@ -233,7 +233,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    padding-right: 15px;
   }
   .main__menu{overflow-x: hidden;
     width: 100%;
@@ -242,6 +241,7 @@ body {
   .main__title {
     display: flex;
     gap: 24px;
+    padding-right: 15px;
   }
   .main__menu-items {
     display: flex;
@@ -274,6 +274,7 @@ body {
     font-size: 14px;
     letter-spacing: 0.3px;
     padding: 0;
+    width: 98%;
   }
   .information__text-second {
     display: -webkit-box;
@@ -295,7 +296,7 @@ body {
   .main__information-right {
     display: flex;
     width: 50%;
-    padding: 0 25px 0 0;
+    padding: 0 40px 0 0;
   }
   .photo-office {
     width: 100%;
