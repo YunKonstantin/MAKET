@@ -7,7 +7,7 @@ body {
 }
 .header {
   display: flex;
-  border-bottom: 1px solid #41f6d7;
+  border-bottom: 1px solid rgba(184, 255, 236, 1);
   flex-direction: row;
   background-color: rgba(255, 255, 255, 1);
 }
