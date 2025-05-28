@@ -124,7 +124,7 @@ body {
 .main__menu-items {
   display: flex;
   overflow-x: auto;
-  padding: 0 16px 0 0;
+  padding-left:  16px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -245,7 +245,7 @@ body {
   }
   .main__menu-items {
     display: flex;
-    padding: 0 0 0 24px;
+    padding-left: 24px;
   }
   .main__information {
     display: flex;
