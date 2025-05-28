@@ -124,7 +124,7 @@ body {
 .main__menu-items {
   display: flex;
   overflow-x: auto;
-  padding: 0 16px;
+  padding: 0 16 0 0px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
