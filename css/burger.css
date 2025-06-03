@@ -220,8 +220,8 @@
     z-index: 998;
     display: none;
   }
-
-  body.menu-open .overlay {
-    display: block;
-  }
+#menu-toggle:checked ~ .overlay {
+  display: block;
+  opacity: 1;
+}
 }
