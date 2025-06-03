@@ -194,4 +194,34 @@
     line-height: 24px;
     letter-spacing: -0.2px;
   }
+  #menu-toggle:not(:checked) ~ .burger-menu {
+    box-shadow: none;
+  }
+  #menu-toggle:not(:checked) ~ .burger-menu::before {
+    opacity: 0;
+  }
+  .burger-menu__icon,
+  .burger-menu__button,
+  .burger-menu__icons img {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .burger-menu__icon:hover,
+  .burger-menu__button:hover,
+  .burger-menu__icons img:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 998;
+    display: none;
+  }
+
+  body.menu-open .overlay {
+    display: block;
+  }
 }
