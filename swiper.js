@@ -7,7 +7,7 @@ let startX = 0;
 let currentX = 0;
 let isDragging = false;
 
-// Создаем точки пагинации
+
 slides.forEach((_, index) => {
   const bullet = document.createElement("span");
   bullet.classList.add("custom-bullet");
@@ -21,7 +21,7 @@ slides.forEach((_, index) => {
 });
 
 function updateSlider() {
-  const slideWidth = slides[0].offsetWidth + 16; // 16px — gap между слайдами
+  const slideWidth = slides[0].offsetWidth + 16; 
   const offset = slideWidth * currentIndex;
   slidesContainer.style.transition = "transform 0.3s ease";
   slidesContainer.style.transform = `translateX(-${offset}px)`;
@@ -44,11 +44,11 @@ function resetAutoplay() {
   }, 3000);
 }
 
-// Обработчики для свайпа пальцем
+
 slidesContainer.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
   isDragging = true;
-  slidesContainer.style.transition = "none"; // отменяем анимацию во время свайпа
+  slidesContainer.style.transition = "none";
 });
 
 slidesContainer.addEventListener("touchmove", (e) => {
@@ -57,7 +57,7 @@ slidesContainer.addEventListener("touchmove", (e) => {
   const deltaX = currentX - startX;
   const slideWidth = slides[0].offsetWidth + 16;
   const offset = -currentIndex * slideWidth + deltaX;
-  slidesContainer.style.transform = `translateX(${offset}px)`; // двигаем слайдер вместе с пальцем
+  slidesContainer.style.transform = `translateX(${offset}px)`; 
 });
 
 slidesContainer.addEventListener("touchend", (e) => {
@@ -67,7 +67,7 @@ slidesContainer.addEventListener("touchend", (e) => {
   const deltaX = endX - startX;
   const slideWidth = slides[0].offsetWidth + 16;
 
-  slidesContainer.style.transition = "transform 0.3s ease"; // возвращаем анимацию
+  slidesContainer.style.transition = "transform 0.3s ease"; 
 
   if (deltaX > slideWidth / 3 && currentIndex > 0) {
     currentIndex--;
