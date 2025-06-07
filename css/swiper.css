@@ -38,9 +38,9 @@
     gap: 16px;
 }
 .swiper__pagination {
-  position: relative; /* или absolute, если надо */
-  width: calc(100% + 32px); /* компенсируем по 16px слева и справа */
-  margin-left: -16px; /* сдвигаем влево, чтобы выйти за padding слайдера */
+  position: relative; 
+  width: calc(100% + 32px); 
+  margin-left: -16px; 
   display: flex;
   justify-content: center;
   gap: 8px;
