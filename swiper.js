@@ -3,7 +3,11 @@ const slides = document.querySelectorAll(".slide");
 const pagination = document.querySelector(".swiper__pagination");
 
 let currentIndex = 0;
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
 
+// Создаем точки пагинации
 slides.forEach((_, index) => {
   const bullet = document.createElement("span");
   bullet.classList.add("custom-bullet");
@@ -11,20 +15,21 @@ slides.forEach((_, index) => {
   bullet.addEventListener("click", () => {
     currentIndex = index;
     updateSlider();
+    resetAutoplay();
   });
   pagination.appendChild(bullet);
 });
 
 function updateSlider() {
-  const offset = slides[currentIndex].offsetLeft;
+  const slideWidth = slides[0].offsetWidth + 16; // 16px — gap между слайдами
+  const offset = slideWidth * currentIndex;
+  slidesContainer.style.transition = "transform 0.3s ease";
   slidesContainer.style.transform = `translateX(-${offset}px)`;
 
   document.querySelectorAll(".custom-bullet").forEach((b, i) => {
     b.classList.toggle("custom-bullet--active", i === currentIndex);
   });
 }
-let startX = 0;
-let isDragging = false;
 
 let autoplayInterval = setInterval(() => {
   currentIndex = (currentIndex + 1) % slides.length;
@@ -39,25 +44,36 @@ function resetAutoplay() {
   }, 3000);
 }
 
+// Обработчики для свайпа пальцем
 slidesContainer.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
   isDragging = true;
+  slidesContainer.style.transition = "none"; // отменяем анимацию во время свайпа
+});
+
+slidesContainer.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  currentX = e.touches[0].clientX;
+  const deltaX = currentX - startX;
+  const slideWidth = slides[0].offsetWidth + 16;
+  const offset = -currentIndex * slideWidth + deltaX;
+  slidesContainer.style.transform = `translateX(${offset}px)`; // двигаем слайдер вместе с пальцем
 });
 
 slidesContainer.addEventListener("touchend", (e) => {
   if (!isDragging) return;
+  isDragging = false;
   const endX = e.changedTouches[0].clientX;
   const deltaX = endX - startX;
+  const slideWidth = slides[0].offsetWidth + 16;
 
-  if (deltaX > 50 && currentIndex > 0) {
+  slidesContainer.style.transition = "transform 0.3s ease"; // возвращаем анимацию
+
+  if (deltaX > slideWidth / 3 && currentIndex > 0) {
     currentIndex--;
-    updateSlider();
-    resetAutoplay();
-  } else if (deltaX < -50 && currentIndex < slides.length - 1) {
+  } else if (deltaX < -slideWidth / 3 && currentIndex < slides.length - 1) {
     currentIndex++;
-    updateSlider();
-    resetAutoplay();
   }
-
-  isDragging = false;
+  updateSlider();
+  resetAutoplay();
 });

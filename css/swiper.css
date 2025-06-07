@@ -3,6 +3,7 @@
   width: 100%;
   overflow: hidden;
   gap: 16px;
+  padding-left: 16px;
 }
 
 .slides {
@@ -19,6 +20,10 @@
   align-items: center;
   justify-content: center;
   gap: 60px;
+  border: 1px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 1);
+  border-color: rgba(234, 234, 234, 1);
 }
 .slider_text {font-family: "TT Lakes";
     font-size: 16px;
@@ -33,10 +38,14 @@
     gap: 16px;
 }
 .swiper__pagination {
+  position: relative; /* или absolute, если надо */
+  width: calc(100% + 32px); /* компенсируем по 16px слева и справа */
+  margin-left: -16px; /* сдвигаем влево, чтобы выйти за padding слайдера */
   display: flex;
   justify-content: center;
+  gap: 8px;
+  padding: 0;
   margin-top: 16px;
-  gap: 12px;
 }
 
 .custom-bullet {
