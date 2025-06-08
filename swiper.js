@@ -6,9 +6,9 @@ let currentIndex = 0;
 let startX = 0;
 let currentX = 0;
 let isDragging = false;
-let visibleSlides = 1; // сколько слайдов видно
+let visibleSlides = 1; 
 
-// Создаем точки пагинации
+
 function createPagination() {
   pagination.innerHTML = ""; // очищаем
   for (let i = 0; i <= slides.length - visibleSlides; i++) {
@@ -24,16 +24,16 @@ function createPagination() {
   }
 }
 
-// Обновляем слайдер
+
 function updateSlider() {
   if (visibleSlides === slides.length) {
-    // Отключаем трансформацию, показываем все слайды
+    
     slidesContainer.style.transform = `none`;
-    pagination.style.display = "none"; // скрываем точки
+    pagination.style.display = "none"; 
     return;
   }
 
-  const slideWidth = slides[0].offsetWidth + 16; // ширина + gap
+  const slideWidth = slides[0].offsetWidth + 16; 
   const offset = slideWidth * currentIndex;
   slidesContainer.style.transition = "transform 0.3s ease";
   slidesContainer.style.transform = `translateX(-${offset}px)`;
@@ -46,7 +46,7 @@ function updateSlider() {
 
 // Автопрокрутка
 let autoplayInterval = setInterval(() => {
-  if (visibleSlides === slides.length) return; // если слайдер выключен — не крутим
+  if (visibleSlides === slides.length) return; 
   currentIndex = (currentIndex + 1) % (slides.length - visibleSlides + 1);
   updateSlider();
 }, 3000);
@@ -62,7 +62,7 @@ function resetAutoplay() {
 
 // Обработчики свайпа
 slidesContainer.addEventListener("touchstart", (e) => {
-  if (visibleSlides === slides.length) return; // отключаем свайп если слайдер выключен
+  if (visibleSlides === slides.length) return; 
   startX = e.touches[0].clientX;
   isDragging = true;
   slidesContainer.style.transition = "none";
@@ -95,12 +95,12 @@ slidesContainer.addEventListener("touchend", (e) => {
   resetAutoplay();
 });
 
-// Функция адаптации видимых слайдов и включения/отключения слайдера
+
 function handleResize() {
   const width = window.innerWidth;
 
   if (width >= 768) {
-    // Отключаем слайдер — показываем все слайды
+    
     visibleSlides = slides.length;
     currentIndex = 0;
   } else if (width >= 480) {
@@ -109,7 +109,7 @@ function handleResize() {
     visibleSlides = 1;
   }
 
-  // Корректируем currentIndex если он выходит за пределы
+  
   if (currentIndex > slides.length - visibleSlides) {
     currentIndex = slides.length - visibleSlides;
   }
@@ -119,4 +119,4 @@ function handleResize() {
 }
 
 window.addEventListener("resize", handleResize);
-handleResize(); // запускаем адаптацию сразу при загрузке
+handleResize(); 
