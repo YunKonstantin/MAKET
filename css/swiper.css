@@ -69,7 +69,8 @@
   display: flex;
   gap: 108px;
 }
-.show-more {display: none;
+.show-more {
+  display: none;
 }
 
 @media (min-width: 768px) and (max-width: 1120px) {
@@ -79,18 +80,28 @@
     gap: 8px;
     padding-top: 15px;
   }
+  .show-more-btn {border: none;
+    background: none;
+    font-family: "TT Lakes";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+}
+
   .slides {
-  display: grid;
-  grid-template-columns: repeat(3, 240px);
-  grid-template-rows: repeat(2, auto);
-  gap:24px;
-  padding-top: 24px; /* немного отступ сверху, как на макете */
-  justify-content: center;
-}
-.slides .slide:nth-child(7),
-.slides .slide:nth-child(8) {
-  display: none;
-}
-
-
+    display: grid;
+    grid-template-columns: repeat(3, 240px);
+    grid-template-rows: repeat(2, auto);
+    gap:  16px 24px;
+    justify-content: center;
+  }
+  .slides .slide:nth-child(7),
+  .slides .slide:nth-child(8) {
+    display: none;
+  }
+  .slider{padding-left: 24px;
+  gap: 24px ;}
+  .slider_text{padding-left: 24px;}
+  .slider-wrapper{gap: 24px;}
 }
