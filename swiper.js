@@ -10,7 +10,7 @@ let visibleSlides = 1;
 
 
 function createPagination() {
-  pagination.innerHTML = ""; // очищаем
+  pagination.innerHTML = ""; 
   for (let i = 0; i <= slides.length - visibleSlides; i++) {
     const bullet = document.createElement("span");
     bullet.classList.add("custom-bullet");
