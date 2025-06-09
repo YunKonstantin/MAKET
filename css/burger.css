@@ -261,30 +261,28 @@
     opacity: 1;
   }
 }
-@media (min-width: 1120px) {
-  @media (min-width: 1120px) {
-    .burger-menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 320px;
-      height: 100vh;
-      background: white;
-      z-index: 1000;
-      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow-y: auto;
-      transform: none !important;
-      transition: none !important;
-    }
-    /* Отключаем бургер переключатель */
-    .menu-toggle {
-      display: none;
-    }
+
+@media (min-width: 1440px) {
+  .burger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    transform: none !important;
+    transition: none !important;
   }
-  main.main {
-    margin-left: 320px; /* сдвигаем контент вправо на ширину меню */
+  /* Отключаем бургер переключатель */
+  .menu-toggle {
+    display: none;
   }
+  .main.main{margin-left: 320px;}
 }
+

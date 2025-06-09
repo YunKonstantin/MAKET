@@ -18,13 +18,17 @@
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 60px;
+  justify-content: space-between;
   border: 1px solid rgba(234, 234, 234, 1);
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 1);
-
   height: 72px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+}
+.slide.extra {
+  display: none;
 }
 .slides .slide:nth-child(7),
 .slides .slide:nth-child(8) {
@@ -37,11 +41,15 @@
   line-height: 24px;
   letter-spacing: -0.2px;
   color: rgba(126, 126, 130, 1);
-  padding-left: 16px;
-  border-top: 2px solid rgba(217, 255, 245, 1);
   height: 56px;
   display: flex;
   align-items: center;
+  background: linear-gradient(rgba(248, 248, 248, 1), rgba(255, 255, 255, 1))
+    no-repeat top;
+  background-size: 100% 2px;
+  padding-left: 16px;
+  background: linear-gradient(90deg, rgba(248, 248, 248, 1), rgba(255, 255, 255, 1)100%);
+  border-top: 1px solid rgba(217, 255, 245, 1);
 }
 .slider-wrapper {
   display: flex;
@@ -72,21 +80,20 @@
 .custom-bullet--active {
   background-color: rgba(181, 182, 188, 1);
 }
-.slide:nth-child(3),
-.slide:nth-child(6) {
-  display: flex;
-  gap: 108px;
-}
+
 .show-more {
   display: none;
 }
 
-@media (min-width: 768px) and (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 1440px) {
+  .slide.extra {
+    display: none;
+  }
   .show-more {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding-top: 15px;
+    padding-top: 24px;
   }
   .show-more-btn {
     border: none;
@@ -106,7 +113,7 @@
   }
   .slides {
     display: grid;
-    grid-template-columns: repeat(3, 240px);
+    grid-template-columns: repeat(3, 224px);
     grid-template-rows: repeat(2, auto);
     gap: 16px 24px;
     justify-content: center;
@@ -119,10 +126,28 @@
     padding-left: 24px;
     gap: 24px;
   }
-  .slider_text {
-    padding-left: 24px;
-  }
+ .slider_text{padding-left: 24px;}
   .slider-wrapper {
     gap: 24px;
   }
+ 
+}
+@media (min-width: 1440px) {
+  .slide:nth-child(7),
+  .slide:nth-child(8) {
+    display: flex;
+  }
+  .slide.extra {
+    display: none;
+  }
+  .slides {
+    display: grid;
+    grid-template-columns: repeat(4, 240px);
+    grid-template-rows: repeat(2, 72px);
+    gap: 16px 32px;
+  }
+  .slider{
+    padding-left: 32px;
+}
+.show-more{padding-top: 32px;}
 }
