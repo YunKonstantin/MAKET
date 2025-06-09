@@ -26,6 +26,10 @@
 
   height: 72px;
 }
+.slides .slide:nth-child(7),
+.slides .slide:nth-child(8) {
+  display: flex;
+}
 .slider_text {
   font-family: "TT Lakes";
   font-size: 16px;
@@ -36,8 +40,8 @@
   padding-left: 16px;
   border-top: 2px solid rgba(217, 255, 245, 1);
   height: 56px;
- display: flex;
- align-items: center;
+  display: flex;
+  align-items: center;
 }
 .slider-wrapper {
   display: flex;
