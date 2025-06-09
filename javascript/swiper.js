@@ -6,11 +6,10 @@ let currentIndex = 0;
 let startX = 0;
 let currentX = 0;
 let isDragging = false;
-let visibleSlides = 1; 
-
+let visibleSlides = 1;
 
 function createPagination() {
-  pagination.innerHTML = ""; 
+  pagination.innerHTML = "";
   for (let i = 0; i <= slides.length - visibleSlides; i++) {
     const bullet = document.createElement("span");
     bullet.classList.add("custom-bullet");
@@ -24,16 +23,14 @@ function createPagination() {
   }
 }
 
-
 function updateSlider() {
   if (visibleSlides === slides.length) {
-    
     slidesContainer.style.transform = `none`;
-    pagination.style.display = "none"; 
+    pagination.style.display = "none";
     return;
   }
 
-  const slideWidth = slides[0].offsetWidth + 16; 
+  const slideWidth = slides[0].offsetWidth + 16;
   const offset = slideWidth * currentIndex;
   slidesContainer.style.transition = "transform 0.3s ease";
   slidesContainer.style.transform = `translateX(-${offset}px)`;
@@ -44,9 +41,8 @@ function updateSlider() {
   });
 }
 
-// Автопрокрутка
 let autoplayInterval = setInterval(() => {
-  if (visibleSlides === slides.length) return; 
+  if (visibleSlides === slides.length) return;
   currentIndex = (currentIndex + 1) % (slides.length - visibleSlides + 1);
   updateSlider();
 }, 3000);
@@ -60,9 +56,8 @@ function resetAutoplay() {
   }, 3000);
 }
 
-// Обработчики свайпа
 slidesContainer.addEventListener("touchstart", (e) => {
-  if (visibleSlides === slides.length) return; 
+  if (visibleSlides === slides.length) return;
   startX = e.touches[0].clientX;
   isDragging = true;
   slidesContainer.style.transition = "none";
@@ -88,19 +83,20 @@ slidesContainer.addEventListener("touchend", (e) => {
 
   if (deltaX > slideWidth / 3 && currentIndex > 0) {
     currentIndex--;
-  } else if (deltaX < -slideWidth / 3 && currentIndex < slides.length - visibleSlides) {
+  } else if (
+    deltaX < -slideWidth / 3 &&
+    currentIndex < slides.length - visibleSlides
+  ) {
     currentIndex++;
   }
   updateSlider();
   resetAutoplay();
 });
 
-
 function handleResize() {
   const width = window.innerWidth;
 
   if (width >= 768) {
-    
     visibleSlides = slides.length;
     currentIndex = 0;
   } else if (width >= 480) {
@@ -109,7 +105,6 @@ function handleResize() {
     visibleSlides = 1;
   }
 
-  
   if (currentIndex > slides.length - visibleSlides) {
     currentIndex = slides.length - visibleSlides;
   }
@@ -119,7 +114,4 @@ function handleResize() {
 }
 
 window.addEventListener("resize", handleResize);
-handleResize(); 
-
-
-
+handleResize();
