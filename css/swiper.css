@@ -34,6 +34,10 @@
   letter-spacing: -0.2px;
   color: rgba(126, 126, 130, 1);
   padding-left: 16px;
+  border-top: 2px solid rgba(217, 255, 245, 1);
+  height: 56px;
+ display: flex;
+ align-items: center;
 }
 .slider-wrapper {
   display: flex;
