@@ -1,3 +1,4 @@
+
 const slidesContainer = document.querySelector(".slides");
 const slides = document.querySelectorAll(".slide");
 const pagination = document.querySelector(".swiper__pagination");
@@ -25,7 +26,7 @@ function createPagination() {
 
 function updateSlider() {
   if (visibleSlides === slides.length) {
-    slidesContainer.style.transform = `none`;
+    slidesContainer.style.transform = "none";
     pagination.style.display = "none";
     return;
   }
@@ -115,3 +116,4 @@ function handleResize() {
 
 window.addEventListener("resize", handleResize);
 handleResize();
+
