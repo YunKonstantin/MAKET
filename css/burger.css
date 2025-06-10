@@ -279,10 +279,11 @@
     transform: none !important;
     transition: none !important;
   }
-  /* Отключаем бургер переключатель */
+
   .menu-toggle {
     display: none;
   }
-  .main.main{margin-left: 320px;}
+  .main.main {
+    margin-left: 320px;
+  }
 }
-

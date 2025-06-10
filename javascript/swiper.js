@@ -8,14 +8,10 @@ let currentX = 0;
 let isDragging = false;
 let visibleSlides = 1;
 
-/**
- * Получить массив отображаемых слайдов для пагинации.
- */
 function getVisibleSlidesForBullets() {
   const width = window.innerWidth;
 
   if (width < 768) {
-    // На мобилке отображаем только первые 8 слайдов без extra
     const visibles = [];
     for (let i = 0; i < slides.length; i++) {
       if (!slides[i].classList.contains("extra")) {
@@ -25,13 +21,9 @@ function getVisibleSlidesForBullets() {
     }
     return visibles;
   } else if (width < 1440) {
-    // На планшете отображаем только слайды без extra (и пагинация включается)
-    return Array.from(slides).filter(s => !s.classList.contains("extra"));
+    return Array.from(slides).filter((s) => !s.classList.contains("extra"));
   } else {
-    // На 1440+ считаем видимыми всё кроме скрытых вручную (например, display: none)
-    return Array.from(slides).filter(
-      s => s.offsetParent !== null // только реально видимые (сетка)
-    );
+    return Array.from(slides).filter((s) => s.offsetParent !== null);
   }
 }
 
@@ -40,7 +32,6 @@ function createPagination() {
   const visibleForBullets = getVisibleSlidesForBullets();
   const bulletCount = Math.max(visibleForBullets.length - visibleSlides + 1, 1);
 
-  // На 1440+ (или >N), если сетка — буллеты можно не показывать
   if (window.innerWidth >= 1440) {
     pagination.style.display = "none";
     return;
@@ -82,8 +73,10 @@ function updateSlider() {
 
 let autoplayInterval = setInterval(() => {
   const visibleForBullets = getVisibleSlidesForBullets();
-  if (visibleSlides >= visibleForBullets.length || window.innerWidth >= 1440) return;
-  currentIndex = (currentIndex + 1) % (visibleForBullets.length - visibleSlides + 1);
+  if (visibleSlides >= visibleForBullets.length || window.innerWidth >= 1440)
+    return;
+  currentIndex =
+    (currentIndex + 1) % (visibleForBullets.length - visibleSlides + 1);
   updateSlider();
 }, 3000);
 
@@ -91,15 +84,18 @@ function resetAutoplay() {
   clearInterval(autoplayInterval);
   autoplayInterval = setInterval(() => {
     const visibleForBullets = getVisibleSlidesForBullets();
-    if (visibleSlides >= visibleForBullets.length || window.innerWidth >= 1440) return;
-    currentIndex = (currentIndex + 1) % (visibleForBullets.length - visibleSlides + 1);
+    if (visibleSlides >= visibleForBullets.length || window.innerWidth >= 1440)
+      return;
+    currentIndex =
+      (currentIndex + 1) % (visibleForBullets.length - visibleSlides + 1);
     updateSlider();
   }, 3000);
 }
 
 slidesContainer.addEventListener("touchstart", (e) => {
   const visibleForBullets = getVisibleSlidesForBullets();
-  if (visibleSlides >= visibleForBullets.length || window.innerWidth >= 1440) return;
+  if (visibleSlides >= visibleForBullets.length || window.innerWidth >= 1440)
+    return;
   startX = e.touches[0].clientX;
   isDragging = true;
   slidesContainer.style.transition = "none";
@@ -162,4 +158,3 @@ function handleResize() {
 
 window.addEventListener("resize", handleResize);
 handleResize();
-
