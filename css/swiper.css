@@ -133,7 +133,7 @@
   }
   .slides {
     display: grid;
-    grid-template-columns: repeat(3, 224px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(2, auto);
     gap: 16px 24px;
     justify-content: center;
