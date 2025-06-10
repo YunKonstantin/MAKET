@@ -10,7 +10,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 24px; /* или больше при необходимости */
+  width: 24px;
   height: 100%;
   pointer-events: none;
   background: linear-gradient(
@@ -18,7 +18,7 @@
     rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 0)
   );
-  z-index: 10; /* убедись, что выше самих слайдов */
+  z-index: 10;
 }
 .slides {
   display: flex;
@@ -106,7 +106,9 @@
   .slide.extra {
     display: none;
   }
-  .slider::after{display: none;}
+  .slider::after {
+    display: none;
+  }
   .show-more {
     display: flex;
     align-items: center;
