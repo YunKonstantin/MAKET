@@ -52,7 +52,7 @@
     rgba(248, 248, 248, 1),
     rgba(255, 255, 255, 1) 100%
   );
-  border-top: 1px solid rgba(217, 255, 245, 1) 100%;
+  border-top: 1px solid rgba(217, 255, 245, 1);
 }
 .slider-wrapper {
   display: flex;
@@ -127,6 +127,7 @@
   }
   .slider {
     padding-left: 24px;
+    padding-right: 24px;
     gap: 24px;
   }
   .slider_text {
