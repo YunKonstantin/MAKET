@@ -5,7 +5,21 @@
   gap: 16px;
   padding-left: 16px;
 }
-
+.slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px; /* или больше при необходимости */
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: 10; /* убедись, что выше самих слайдов */
+}
 .slides {
   display: flex;
   transition: transform 0.3s ease;
@@ -92,6 +106,7 @@
   .slide.extra {
     display: none;
   }
+  .slider::after{display: none;}
   .show-more {
     display: flex;
     align-items: center;
