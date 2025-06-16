@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/burger.css" />
+    <link rel="stylesheet" href="css/swiper.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__main-navigation">
+        <div class="header__nav-left">
+          <label
+            for="menu-toggle"
+            class="burger-button"
+            aria-label="Открыть меню"
+          >
+            <img src="img/burger.svg" alt="open menu" />
+          </label>
+          <button class="header__divider-first">
+            <img src="img/divider.svg" />
+          </button>
+          <button class="header__logo">
+            <img src="img/Group.svg" />
+          </button>
+        </div>
+        <div class="header__nav-right">
+          <div class="contact-us">
+            <button class="contact-us__call">
+              <img src="img/call.svg" />
+            </button>
+            <button class="contact-us__chat">
+              <img src="img/chat.svg" />
+            </button>
+            <button class="contact-us__profile">
+              <img src="img/profile.svg" />
+            </button>
+          </div>
+          <button class="header__divider-second">
+            <img src="img/divider.svg" />
+          </button>
+          <button class="header__repair">
+            <img src="img/repair.svg" />
+          </button>
+          <button class="header__checkstatus">
+            <img src="img/checkstatus.svg" />
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="menu-wrapper">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <div class="overlay"></div>
+      <div class="burger-menu">
+        <div class="burger-menu__content">
+          <div class="burger-menu__top">
+            <div class="burger-menu__left">
+              <label for="menu-toggle" class="burger-menu__close">
+                <img src="img/burger__close.svg" alt="close" />
+              </label>
+              <a href="#" class="burger-logo" data-page="main">
+                <img src="img/Group.svg" alt="logo" />
+              </a>
+            </div>
+            <img src="img/search.svg" alt="search" />
+          </div>
+          <nav class="burger-menu__nav">
+            <ul class="burger-menu__list">
+              <li class="burger-menu__item--active">
+                <img
+                  src="img/highilight.svg"
+                  alt="highilight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link" data-page="brands">
+                  Ремонт техники
+                </a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="img/highilight.svg"
+                  alt="highilight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link" data-page="devices">
+                  Услуги и сервисы
+                </a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="img/highilight.svg"
+                  alt="highilight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link" data-page="discount"
+                  >Корпоративным клиентам</a
+                >
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="img/highilight.svg"
+                  alt="highilight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Продавцам техники</a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="img/highilight.svg"
+                  alt="highilight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Партнерам</a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="img/highilight.svg"
+                  alt="highilight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Производителям</a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="img/highilight.svg"
+                  alt="highilight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Наши сервисные сервисы</a>
+              </li>
+              <li class="burger-menu__item">
+                <img
+                  src="img/highilight.svg"
+                  alt="highilight"
+                  class="burger-menu__icon"
+                />
+                <a href="#" class="burger-menu__link">Контанты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="burger-menu__bottom">
+          <div class="burger-menu__contacts">
+            <div class="burger-menu__icons">
+              <img src="img/call.svg" alt="call" />
+              <img src="img/chat.svg" alt="chat" />
+              <img src="img/profile.svg" alt="profile" />
+            </div>
+            <a class="burger-menu__mail" href="mailto:mail@cps.com"
+              >mail@cps.com</a
+            >
+            <a class="burger-menu__phone" href="tel:88008908900">88008908900</a>
+          </div>
+          <div class="burger__menu-languages">
+            <button class="burger-menu__button burger-menu__button--active">
+              RU
+            </button>
+            <button class="burger-menu__button">EN</button>
+            <button class="burger-menu__button">CH</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="main">
+      <div class="main__services">
+        <div class="main__title">
+          <img class="main__title-divider" src="img/highilight.svg" />
+          <h1 class="main__title-name">Услуги и сервисы</h1>
+        </div>
+        <div class="main__services-buttons">
+          <button class="button_item">
+            <p class="button_item-text">Оставить заявку</p>
+            <img src="img/repair.svg" />
+          </button>
+          <button class="button_item">
+            <p class="button_item-text">Статус ремонта</p>
+            <img src="img/checkstatus.svg" />
+          </button>
+        </div>
+      </div>
+      <div class="main__menu">
+        <nav class="main__menu-items">
+          <ul class="main__menu-list">
+            <li class="main__menu-item main__menu-item--active">
+              Ремонтируемые бренды
+            </li>
+            <li class="main__menu-item">Ремонтируемые устройства</li>
+            <li class="main__menu-item">Цены на услуги</li>
+            <li class="main__menu-item">Адреса сервисных центров</li>
+            <li class="main__menu-item">Специальные цены</li>
+            <li class="main__menu-item">Отзывы</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="main__information">
+        <div class="main__information-left">
+          <div class="information__text">
+            <p class="information__text-first">
+              Мы являемся авторизованным сервисным центром по ремонту техники
+              Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
+              официальной гарантией производителя.
+            </p>
+            <p class="information__text-second">
+              Мы успешно работаем с 1992 года и заслужили репутацию надежного
+              партнера, что подтверждает большое количество постоянных клиентов.
+              Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
+              очередь, советуют нас родным и близким.
+            </p>
+          </div>
+          <div class="main__information-more">
+            <img class="information-more__img" src="img/expand.svg" />
+            <p class="information-more__txt">Читать далее</p>
+          </div>
+        </div>
+        <div class="main__information-right">
+          <img class="photo-office" src="img/Picture Copy.svg" alt="" />
+        </div>
+      </div>
+      <div class="slider-wrapper">
+        <h2 class="slider_text">РЕМОНТ ТЕХНИКИ РАЗЛИЧНЫХ БРЕНДОВ</h2>
+        <div class="slider">
+          <div class="slides">
+            <div class="slide">
+              <img src="imgSwiper/Lenovo.svg" alt="Lenovo" /><img
+                src="imgSwiper/go.svg"
+                alt="go"
+              />
+            </div>
+            <div class="slide">
+              <img src="imgSwiper/Samsung.svg" alt="Samsung" />
+              <img src="imgSwiper/go.svg" alt="go" />
+            </div>
+            <div class="slide">
+              <img src="imgSwiper/Apple.svg" alt="Apple" />
+              <img src="imgSwiper/go.svg" alt="go" />
+            </div>
+            <div class="slide">
+              <img src="imgSwiper/Viev.svg" alt="Viev" /><img
+                src="imgSwiper/go.svg"
+                alt="go"
+              />
+            </div>
+            <div class="slide">
+              <img src="imgSwiper/Bosh.svg" alt="Bosh" />
+              <img src="imgSwiper/go.svg" alt="go" />
+            </div>
+            <div class="slide">
+              <img src="imgSwiper/HP.svg" alt="HP" />
+              <img src="imgSwiper/go.svg" alt="go" />
+            </div>
+            <div class="slide">
+              <img src="imgSwiper/Acer.svg" alt="Acer" />
+              <img src="imgSwiper/go.svg" alt="go" />
+            </div>
+            <div class="slide">
+              <img src="imgSwiper/Sony.svg" alt="Sony" />
+              <img src="imgSwiper/go.svg" alt="go" />
+            </div>
+
+            <div class="slide extra">
+              <img src="imgSwiper/Lenovo.svg" alt="Lenovo" /><img
+                src="imgSwiper/go.svg"
+                alt="go"
+              />
+            </div>
+            <div class="slide extra">
+              <img src="imgSwiper/Samsung.svg" alt="Samsung" />
+              <img src="imgSwiper/go.svg" alt="go" />
+            </div>
+            <div class="slide extra">
+              <img src="imgSwiper/Apple.svg" alt="Apple" />
+              <img src="imgSwiper/go.svg" alt="go" />
+            </div>
+          </div>
+          <div class="show-more">
+            <img
+              class="show-more-img"
+              src="imgSwiper/expand.svg"
+              alt="expand"
+            />
+            <button class="show-more-btn">Показать все</button>
+          </div>
+          <div class="swiper__pagination"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/button.js"></script>
+    <script src="js/swiper.js"></script>
+  </body>
+</html>

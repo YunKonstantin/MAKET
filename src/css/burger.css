@@ -1,0 +1,289 @@
+.burger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 16px 52px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  gap: 32px;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+#menu-toggle:checked ~ .burger-menu {
+  transform: translateX(0);
+}
+.burger-button,
+.burger-menu__left img,
+.burger-menu__top img,
+.burger-menu__icons img,
+.burger-menu__icon,
+.burger-menu__button {
+  cursor: pointer;
+}
+.burger-menu__icon,
+.burger-menu__button,
+.burger-menu__icons img {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.burger-menu__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 16px 24px 0 24px;
+}
+.burger-menu__left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
+}
+.burger-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.burger-menu__item {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+.burger-menu__icon {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.burger-menu__item--active .burger-menu__icon,
+.burger-menu__item:hover .burger-menu__icon,
+.burger-menu__item:focus-within .burger-menu__icon {
+  opacity: 1;
+}
+
+.burger-menu__item--active {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: rgba(126, 126, 130, 1);
+}
+.burger-menu__link {
+  padding-left: 24px;
+  transition: color 0.3s;
+  color: #000;
+}
+.burger-menu__contacts {
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  gap: 12px;
+}
+.burger-menu__icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+.burger-menu__mail {
+  padding-top: 4px;
+  font-weight: 500;
+}
+.burger-menu__phone {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+}
+.burger__menu-languages {
+  padding-left: 24px;
+  display: flex;
+  gap: 7px;
+}
+.burger-menu__button {
+  border: none;
+  background-color: white;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: rgba(27, 28, 33, 1);
+}
+.burger-menu__button--active {
+  border: none;
+  background-color: white;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: rgba(126, 126, 130, 1);
+}
+.burger-menu__icon:hover,
+.burger-menu__button:hover,
+.burger-menu__icons img:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+.burger-menu__link:hover,
+.burger-menu__link:focus {
+  filter: brightness(0.85);
+  opacity: 0.7;
+  color: rgba(126, 126, 130, 1);
+}
+@media (min-width: 768px) {
+  .burger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 16px 52px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 32px;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .burger-menu__icon {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .burger-menu__link {
+    transition: color 0.3s;
+    color: #000;
+    padding-left: 20px;
+  }
+  .burger-menu__link:hover,
+  .burger-menu__link:focus {
+    filter: brightness(0.85);
+    opacity: 0.7;
+    color: rgba(126, 126, 130, 1);
+  }
+  .burger-menu__item--active .burger-menu__icon,
+  .burger-menu__item:hover .burger-menu__icon,
+  .burger-menu__item:focus-within .burger-menu__icon {
+    opacity: 1;
+  }
+  .burger-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .burger-menu__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 16.73px;
+  }
+  .burger-menu__mail {
+    padding-top: 4px;
+  }
+  .burger-menu__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 0 32px;
+  }
+  .menu-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .burger-menu__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .burger-menu__button {
+    font-family: "TT Lakes";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+  }
+  #menu-toggle:not(:checked) ~ .burger-menu {
+    box-shadow: none;
+  }
+  #menu-toggle:not(:checked) ~ .burger-menu::before {
+    opacity: 0;
+  }
+  .burger-menu__icon,
+  .burger-menu__button,
+  .burger-menu__icons img {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .burger-menu__icon:hover,
+  .burger-menu__button:hover,
+  .burger-menu__icons img:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 998;
+    display: none;
+  }
+  #menu-toggle:checked ~ .overlay {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1440px) {
+  .burger-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+  .main.main {
+    margin-left: 320px;
+  }
+}
