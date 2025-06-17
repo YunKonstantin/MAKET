@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const { extendDefaultPlugins } = require('svgo');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -82,7 +81,7 @@ module.exports = {
         loader: 'html-loader',
       },
       {
-        test: /\.css$/i,
+        test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
@@ -90,17 +89,12 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [['autoprefixer']],
+                plugins: [
+                  ['autoprefixer'],
+                ],
               },
             },
           },
-        ],
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
           'sass-loader',
         ],
       },
@@ -131,9 +125,10 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.scss'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
+      '@styles': path.resolve(__dirname, 'src/css'),
     },
   },
 };
